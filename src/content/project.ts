@@ -1,5 +1,5 @@
 // src/content/project.ts
-import { Project } from '../types';
+import { Project } from '@/types';
 
 export const featuredProjects: Project[] = [
   {
