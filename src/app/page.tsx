@@ -20,32 +20,43 @@ export default function HomePage() {
   return (
     <main className="pb-24">
      {/* SECCIÓN 1: HERO */}
+{/* SECCIÓN 1: HERO CON EFECTO AVATAR AUTOPLAY */}
 <section className="py-24 md:py-32 border-b border-zinc-200 dark:border-zinc-900 relative reveal">
   <Container>
     <div className="flex flex-col md:flex-row gap-12 items-center md:items-start">
       
-      {/* --- BLOQUE DE AVATAR CON EFECTO PIXEL/BLUR --- */}
-      <div className="relative w-32 h-32 md:w-48 md:h-48 shrink-0 group/avatar">
-        {/* Anillos de hardware decorativos */}
-        <div className="absolute inset-0 border border-zinc-300 dark:border-zinc-800 rounded-full scale-110"></div>
-        <div className="absolute inset-0 border border-red-600/20 dark:border-red-500/20 rounded-full scale-125 animate-pulse"></div>
+      {/* --- BLOQUE DE AVATAR: EL ESCÁNER DE REVELADO (AUTOPLAY) --- */}
+      <div className="relative w-32 h-32 md:w-48 md:h-48 shrink-0">
         
-        {/* Contenedor de la imagen */}
-        <div className="w-full h-full rounded-full overflow-hidden border-2 border-white dark:border-black shadow-2xl relative bg-zinc-100 dark:bg-zinc-950 flex items-center justify-center">
+        {/* Anillos de hardware externos (Sutiles y fijos) */}
+        <div className="absolute inset-[-10%] border border-zinc-200 dark:border-zinc-800 rounded-full"></div>
+        <div className="absolute inset-[-20%] border border-zinc-100 dark:border-zinc-900 rounded-full"></div>
+        
+        {/* Contenedor Principal (Máscara circular) */}
+        <div className="w-full h-full rounded-full overflow-hidden border-2 border-white dark:border-black bg-zinc-100 dark:bg-zinc-950 shadow-2xl relative z-10 flex items-center justify-center">
+          
+          {/* La Imagen (Aplica la animación de B/N a Color) */}
           <img 
             src={siteConfig.avatarUrl} 
             alt={siteConfig.name}
-            /* Transición de blur: empieza en 8px y se limpia al hacer hover */
-            className="w-full h-full object-cover transition-all duration-700 blur-[8px] group-hover/avatar:blur-none group-hover/avatar:scale-105" 
+            className="w-full h-full object-cover animate-photo-reveal" 
           />
           
-          {/* Overlay de rejilla (simulación de píxeles) que desaparece en hover */}
-          <div className="absolute inset-0 pointer-events-none bg-dot-grid opacity-40 dark:opacity-50 group-hover/avatar:opacity-0 transition-opacity duration-700"></div>
+          {/* Capa de Rejilla Dot Matrix (Desaparece progresivamente) */}
+          <div className="absolute inset-0 pointer-events-none bg-dot-grid animate-dots-fade"></div>
+
+          {/* LA LÍNEA DE ESCÁNER (Aplica la animación de barrido) */}
+          <div className="absolute top-[-100%] left-0 w-full h-[2px] bg-red-600 shadow-[0_0_15px_4px_rgba(220,38,38,0.7)] animate-scanner"></div>
+        </div>
+
+        {/* Etiqueta técnica inferior confirmando identidad (Aparece al final de la animación) */}
+        <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 font-mono text-[9px] text-zinc-400 whitespace-nowrap opacity-0 animate-fade-in animation-delay-3500">
+          SCAN_STATUS: OK // IDENTITY_CONFIRMED
         </div>
       </div>
 
       {/* --- BLOQUE DE TEXTO Y ACCIONES --- */}
-      <div className="md:flex-1 text-center md:text-left">
+      <div className="md:flex-1 text-center md:text-left pt-4">
         <div className="inline-block border border-zinc-300 dark:border-zinc-800 px-3 py-1 text-xs font-mono text-zinc-500 dark:text-zinc-400 mb-8 uppercase tracking-widest bg-zinc-100 dark:bg-zinc-950">
           SYS.STATUS: ONLINE
         </div>
@@ -57,7 +68,7 @@ export default function HomePage() {
           </span>
         </h1>
         
-        <p className="font-mono text-red-600 dark:text-red-500 text-sm md:text-base mb-12 uppercase tracking-tighter">
+        <p className="font-mono text-red-600 dark:text-red-500 text-sm md:text-base mb-12 uppercase tracking-tighter font-bold">
           {siteConfig.skills}
         </p>
 

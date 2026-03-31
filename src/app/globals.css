@@ -8,19 +8,16 @@
   .font-mono { font-family: 'Space Mono', monospace; }
   .font-dot { font-family: 'VT323', monospace; }
 
-  /* Rejillas de Puntos (Mejoradas para legibilidad y profesionalidad) */
-  /* Modo Claro: Fondo zinc-50, puntos zinc-300 muy finos */
+  /* Rejillas de Puntos fine-tuned (Nothing OS Look) */
   .bg-dot-grid {
-    background-image: radial-gradient(circle, #d4d4d8 0.5px, transparent 0.5px); /* zinc-300 dot on zinc-50 bg */
+    background-image: radial-gradient(circle, #000000 0.5px, transparent 0.5px);
     background-size: 24px 24px;
   }
-  
-  /* Modo Oscuro: Fondo black, puntos zinc-900 muy finos */
   .dark .bg-dot-grid {
-    background-image: radial-gradient(circle, #262626 0.5px, transparent 0.5px); /* zinc-900 dot on black bg */
+    background-image: radial-gradient(circle, #333333 0.5px, transparent 0.5px);
   }
 
-  /* Animaciones Reveal (Scroll) Mejoradas */
+  /* Animaciones Reveal de Scroll Mejoradas */
   .reveal {
     opacity: 0;
     transform: translateY(30px) scale(0.98);
@@ -37,4 +34,46 @@
   .delay-0 { transition-delay: 0ms; }
   .delay-1 { transition-delay: 150ms; }
   .delay-2 { transition-delay: 300ms; }
+
+  /* -------------------------------------------------- */
+  /* --- NUEVA SECCIÓN: ANIMACIONES AVATAR AUTOPLAY --- */
+  /* -------------------------------------------------- */
+
+  /* 1. La línea de escáner roja: barrido rápido y desaparición */
+  @keyframes scanner-sweep {
+    0% { top: -10%; opacity: 0; }
+    10% { opacity: 1; }
+    80% { opacity: 1; }
+    100% { top: 110%; opacity: 0; }
+  }
+
+  /* 2. La foto: transición sedosa de B/N a Color (coordinada con el escáner) */
+  @keyframes photo-reveal {
+    0% { filter: grayscale(1); opacity: 0.8; }
+    60% { filter: grayscale(1); opacity: 0.8; } /* Mantiene el B/N hasta casi el final */
+    100% { filter: grayscale(0); opacity: 1; }
+  }
+
+  /* 3. La rejilla Dot Matrix: desaparece progresivamente */
+  @keyframes dots-fade {
+    0% { opacity: 0.3; }
+    70% { opacity: 0.3; }
+    100% { opacity: 0; }
+  }
+
+  /* Clases para aplicar las animaciones */
+  .animate-scanner {
+    animation: scanner-sweep 2.5s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+    animation-delay: 0.8s; /* Espera un poco a que cargue la página */
+  }
+
+  .animate-photo-reveal {
+    animation: photo-reveal 2.8s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+    animation-delay: 0.8s;
+  }
+
+  .animate-dots-fade {
+    animation: dots-fade 2.5s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+    animation-delay: 0.8s;
+  }
 }
