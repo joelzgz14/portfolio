@@ -21,7 +21,7 @@ export const projectsData = [
     link: "/projects/portfolio", // <--- CAMBIADO: Ahora Next.js lo encontrará
     featured: true,
     demoUrl: "/", // Como es este mismo sitio, apunta a la home
-    repoUrl: "https://github.com/tu-usuario/tu-repo-portfolio",
+    repoUrl: "https://github.com/joelzgz14/portfolio",
     // Podemos añadir un campo extra para la explicación larga si quieres
     longDescription: "Este proyecto ha sido diseñado bajo una arquitectura limpia (Clean Architecture), separando la capa de datos (Content), la lógica de negocio (Hooks) y la interfaz (Components). Utiliza las últimas tecnologías del ecosistema React, como el App Router de Next.js y Tailwind CSS v4 para un rendimiento óptimo."
   }
