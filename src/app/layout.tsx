@@ -17,10 +17,9 @@ export default function RootLayout({
     // Añadimos suppressHydrationWarning aquí
     <html lang="es" className="dark scroll-smooth" suppressHydrationWarning>
       <head>
-        {/* ... (tus fuentes) */}
+      <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&family=VT323&display=swap" rel="stylesheet" />
       </head>
-      <body className="min-h-screen font-mono selection:bg-red-600 selection:text-white bg-zinc-50 dark:bg-black bg-dot-grid transition-colors duration-300 flex flex-col">
-        <Navbar />
+      <body className="min-h-screen font-sans selection:bg-red-600 selection:text-white bg-zinc-50 dark:bg-black bg-dot-grid transition-colors duration-300 flex flex-col">        <Navbar />
         <div className="flex-grow">
           {children}
         </div>

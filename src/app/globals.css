@@ -4,9 +4,9 @@
 @variant dark (&:where(.dark, .dark *));
 
 @layer utilities {
-  /* Tipografías */
-  .font-mono { font-family: 'Space Mono', monospace; }
-  .font-dot { font-family: 'VT323', monospace; }
+/* Tipografías Nothing OS */
+.font-sans { font-family: 'Space Grotesk', sans-serif; }
+.font-dot { font-family: 'VT323', monospace; letter-spacing: 0.05em; }
 
   /* Rejillas de Puntos fine-tuned (Nothing OS Look) */
   .bg-dot-grid {
