@@ -4,13 +4,12 @@ export const projectsData = [
     id: "fut7stats",
     title: "FUT7STATS.OS",
     subtitle: "PLATAFORMA INTEGRAL + IA",
-    description: "Arquitectura de microservicios distribuida. Backend en AWS EC2 orquestado con Docker Compose. Frontend SPA alojado en Vercel. Seguridad perimetral y enrutamiento mediante API Gateway y Caddy Server.",
-    technologies: ["JAVA", "SPRING BOOT", "DOCKER", "AWS EC2", "CADDY", "VUE.JS"],
+    description: "Ecosistema digital para la gestión profesional de equipos y ligas de fútbol amateur. Integra Inteligencia Artificial para análisis deportivo sobre una arquitectura de microservicios escalable en AWS.",
+    technologies: ["JAVA", "SPRING BOOT", "DOCKER", "AWS EC2", "CADDY", "VUE.JS", "AI"],
     link: "/projects/fut7stats",
     featured: true,
     demoUrl: "https://fut7stats.vercel.app",
     repoUrl: "https://github.com/joelzgz14/Fut7Stats-Platform",
-    // --- NUEVOS CAMPOS DINÁMICOS ---
     hasVideo: true,
     status: "EN PRODUCCIÓN [STABLE]",
     systemSpecs: [
@@ -19,23 +18,23 @@ export const projectsData = [
       { label: "ORQUESTACIÓN", value: "Docker Compose (4 nodos)", fullWidth: true }
     ],
     securityNote: "CORS & Terminación SSL configuradas. Gateway Activo.",
-    // -------------------------------
-    longDescription: `## ARQUITECTURA DEL SISTEMA::FUT7STATS
+    longDescription: `## PLATAFORMA DE GESTIÓN DEPORTIVA::FUT7STATS
 
-Fut7Stats es una plataforma deportiva diseñada bajo una arquitectura de microservicios, priorizando la escalabilidad, la seguridad perimetral y la independencia de despliegue de cada módulo.
+Fut7Stats es un ecosistema digital avanzado diseñado para revolucionar la organización de ligas y equipos de fútbol amateur. Democratiza el acceso a estadísticas y herramientas que tradicionalmente solo estaban al alcance de clubes profesionales.
+
+### 🧠 INTELIGENCIA ARTIFICIAL Y ANALÍTICA
+**Análisis de Rendimiento:** Procesamiento de datos de partidos para extraer métricas clave, evaluar el rendimiento de los jugadores y generar insights automáticos.
+**Automatización:** Algoritmos diseñados para la generación dinámica de calendarios, cruces de eliminatorias y alertas del sistema.
 
 ### 🧩 ECOSISTEMA DE MICROSERVICIOS (BACKEND)
-**API Gateway:** Actúa como punto de entrada único (Single Point of Entry). Enruta las peticiones del cliente hacia los servicios internos, gestiona las políticas de CORS y oculta la topología del clúster.
-**Auth Service:** Microservicio dedicado exclusivamente a la gestión de identidad, autenticación y emisión de tokens JWT seguros.
-**Core Backend:** Desarrollado en Java con Spring Boot. Contiene la lógica principal de negocio, procesamiento de estadísticas y persistencia de datos.
+**Core Deportivo (Spring Boot):** Microservicio principal en Java que maneja la compleja lógica de negocio: gestión de plantillas, clasificaciones, sanciones y actas de partidos.
+**Auth Service:** Módulo dedicado exclusivamente a la seguridad, control de roles (Administrador, Jugador, Árbitro) y emisión de tokens JWT.
+**API Gateway:** Punto de entrada único que enruta las peticiones del frontend, unificando la respuesta del clúster interno.
 
-### 🖥️ INTERFAZ DE USUARIO (FRONTEND)
-**Vue.js SPA:** Aplicación de página única (Single Page Application) reactiva. Desplegada de forma totalmente desacoplada en la infraestructura Edge de Vercel con HTTPS nativo.
-
-### ☁️ INFRAESTRUCTURA Y ORQUESTACIÓN (DEVOPS)
-**Docker Compose:** Orquestación del clúster aislando en contenedores independientes el Gateway, Auth Service, Core y el Proxy Inverso.
-**AWS EC2 (Ubuntu 24.04):** Alojamiento de todo el ecosistema backend en la nube de Amazon, optimizado con Swap Memory para maximizar el rendimiento en instancias t2.micro.
-**Caddy Server (Reverse Proxy):** Intercepta el tráfico web entrante, gestionando automáticamente la terminación SSL (HTTPS mediante Let's Encrypt) y redirigiendo las peticiones seguras al API Gateway.`
+### ☁️ INFRAESTRUCTURA Y DESPLIEGUE (DEVOPS)
+**AWS EC2 & Docker Compose:** Alojamiento en la nube de Amazon aislando cada microservicio en contenedores independientes. Optimizado con Swap Memory para máxima eficiencia.
+**Vue.js SPA:** Aplicación de página única reactiva, desplegada de forma desacoplada en la red perimetral (Edge) de Vercel con HTTPS nativo.
+**Caddy Server:** Proxy inverso encargado de interceptar el tráfico web y gestionar la renovación automática de certificados SSL.`
   },
   {
     id: "portfolio",
