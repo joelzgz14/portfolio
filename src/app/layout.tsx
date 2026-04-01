@@ -4,8 +4,24 @@ import "./globals.css";
 import { Navbar } from "@/components/Navbar"; 
 
 export const metadata: Metadata = {
-  title: "JOEL CARRERAS | Backend Engineer (Java)",
-  description: "Portfolio de Joel - Desarrollador Java Senior, certificado Cambridge B2 English.",
+  title: "Joel Carreras | Backend Engineer",
+  description: "Ecosistema digital y portfolio personal. Proyectos de arquitectura backend, microservicios y despliegue en nube.",
+  openGraph: {
+    title: "Joel Carreras | Backend.SYS",
+    description: "Portfolio de ingeniería de software. Clean Architecture, AWS y microservicios.",
+    url: "https://TU-DOMINIO.vercel.app", // Pon aquí tu enlace real
+    siteName: "Joel Carreras",
+    images: [
+      {
+        url: "/og-image.jpg", // Busca la imagen que acabas de guardar
+        width: 1200,
+        height: 630,
+        alt: "Preview del portfolio de Joel Carreras",
+      },
+    ],
+    locale: "es_ES",
+    type: "website",
+  },
 };
 
 export default function RootLayout({
